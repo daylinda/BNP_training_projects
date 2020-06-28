@@ -4,6 +4,7 @@ package com.app.main;
 import java.util.Scanner;
 
 import com.app.bo.impl.FileBOImpl;
+import com.app.config.PathConfig;
 import com.app.listfiles.ListFiles;
 
 public class LockerMain {
@@ -12,8 +13,9 @@ public class LockerMain {
 		
 		int ch = 0;
 		int choice = 0;
-		//String choice = "";
+		
 		String fname = "";
+		String srcPath ="";
 		Scanner scanner = new Scanner(System.in);
 		FileBOImpl fileImpl = new FileBOImpl();
 		
@@ -34,7 +36,7 @@ public class LockerMain {
 			switch (ch) {
 			case 1:
 				ListFiles lf = new ListFiles();
-				lf.printListFiles("C:\\Users\\davin\\OneDrive\\Desktop\\BNP_Training_Projects\\Phase1_project\\app_textfiles");
+				lf.printListFiles(PathConfig.ROOT_PATH);
 				System.out.println("\n");
 				break;
 				
@@ -53,30 +55,41 @@ public class LockerMain {
 					
 					switch (choice) {
 					
-					case /*"a"*/1:
-						System.out.println("Add file to directory:");
-						System.out.println("Enter name of file to be created ");
-						fname = scanner.nextLine();
-						fileImpl.createFileName(fname);
+					case 1:
+						System.out.println("\nAdd file to directory:");
+						System.out.println("1) Create new file");
+						System.out.println("2) Add file from machine");
+						System.out.println("Enter your choice:");
+						int io = Integer.parseInt(scanner.nextLine());
+						if(io == 1) {
+							System.out.println("Enter name of file to be created ");
+							fname = scanner.nextLine();
+							fileImpl.createFileName(fname);
+						}else if(io == 2) {
+							System.out.println("Enter path of file ");
+							srcPath = scanner.nextLine();
+							fileImpl.createFileSrcPath(srcPath);
+						}
+						
 												
 						break;
 						
-					case /*"b"*/2:
+					case 2:
+						
 						System.out.println("Delete file from directory:");
 						fname = scanner.nextLine();
 						fileImpl.deleteFileName(fname);
-						
-						
+											
 						break;
 						
-					case /*"c"*/3:
+					case 3:
 						System.out.println("Search file in directory:");
 						fname = scanner.nextLine();
 						fileImpl.searchFileName(fname);
 						
 						break;
 						
-					case /*"d"*/4:
+					case 4:
 						System.out.println("Returning to main menu");
 						break;
 													
@@ -88,7 +101,7 @@ public class LockerMain {
 					
 					
 					
-				}while(/*choice.equals("d")*/choice!=4);
+				}while(choice!=4);
 				
 				
 				break;

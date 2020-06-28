@@ -1,19 +1,25 @@
 package com.app.bo.impl;
 
-//import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.IOException;
 //import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import com.app.bo.FileBO;
+import com.app.config.PathConfig;
+
 
 public class FileBOImpl implements FileBO {
 
 	@Override
 	public void createFileName(String fileName) {
 		
-		File file = new File("C:\\Users\\davin\\OneDrive\\Desktop\\BNP_Training_Projects\\Phase1_project\\app_textfiles",fileName);
-		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		File file = new File(PathConfig.ROOT_PATH,fileName);
+		
 		
 		if(!file.exists()) {
 			
@@ -36,7 +42,7 @@ public class FileBOImpl implements FileBO {
 	@Override
 	public void deleteFileName(String fileName) {
 		
-		File file = new File("C:\\Users\\davin\\OneDrive\\Desktop\\BNP_Training_Projects\\Phase1_project\\app_textfiles",fileName);
+		File file = new File(PathConfig.ROOT_PATH,fileName);
 		if(file.exists()) {
 			
 			file.delete();
@@ -52,7 +58,7 @@ public class FileBOImpl implements FileBO {
 	@Override
 	public void searchFileName(String fileName) {
 		
-		File file = new File("C:\\Users\\davin\\OneDrive\\Desktop\\BNP_Training_Projects\\Phase1_project\\app_textfiles",fileName);
+		File file = new File(PathConfig.ROOT_PATH,fileName);
 		if(file.exists()) {
 			
 			System.out.println( file.getName() + " is found at path "+file.getPath());
@@ -62,6 +68,29 @@ public class FileBOImpl implements FileBO {
 			System.out.println("File not found");
 			
 		}
+		
+		
+	}
+
+	@Override
+	public void createFileSrcPath(String srcPath)  {
+		
+		Path from = Paths.get(srcPath);
+		
+		File oldFile = new File(srcPath);
+		String name = oldFile.getName();
+		
+		File newFile = new File(PathConfig.ROOT_PATH,name);
+		
+		Path to = Paths.get(newFile.getPath());
+		
+		try {
+			Files.copy(from, to,StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Invalid path name");
+		}
+		
 		
 		
 	}
