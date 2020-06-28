@@ -22,7 +22,7 @@ public class LockerMain {
 		
 		do {
 			
-			System.out.println("Welcome to Company Lockers Pvt Ltd.");
+			System.out.println("\nWelcome to Company Lockers Pvt Ltd.");
 			System.out.println("Developed by Davina Pinto,BNP trainee");
 			System.out.println("----------------");
 			System.out.println("Main Menu");
@@ -37,8 +37,9 @@ public class LockerMain {
 				
 				ch = Integer.parseInt(scanner.nextLine());
 				
-			}catch(BusinessException e) {
-				System.out.println(e.getMessage());
+			}catch(Exception e) {
+				
+				System.out.println("No input found");
 			}
 			
 			
@@ -46,6 +47,7 @@ public class LockerMain {
 			switch (ch) {
 			case 1:
 				ListFiles lf = new ListFiles();
+				System.out.println("\n");
 				lf.printListFiles(PathConfig.ROOT_PATH);
 				System.out.println("\n");
 				break;
@@ -53,7 +55,7 @@ public class LockerMain {
 			case 2:
 				do {
 					
-					System.out.println("\nPlease enter one the following options\n");
+					System.out.println("\nPlease enter one the following options");
 					System.out.println("----------------");
 					System.out.println("1)Add file to List ");
 					System.out.println("2)Delete file from List ");
@@ -71,6 +73,7 @@ public class LockerMain {
 						System.out.println("2) Add file from machine");
 						System.out.println("Enter your choice:");
 						try {
+							
 							int io = Integer.parseInt(scanner.nextLine());
 							if(io == 1) {
 								System.out.println("Enter name of file to be created ");
@@ -92,8 +95,8 @@ public class LockerMain {
 								
 							}
 							
-						}catch(BusinessException e) {
-							System.out.println(e.getMessage());
+						}catch(Exception e) {
+							System.out.println("No input found");
 						}
 						
 						
