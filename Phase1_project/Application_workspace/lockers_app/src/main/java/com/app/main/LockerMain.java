@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.app.bo.impl.FileBOImpl;
 import com.app.config.PathConfig;
+import com.app.exception.BusinessException;
 import com.app.listfiles.ListFiles;
 
 public class LockerMain {
@@ -31,7 +32,16 @@ public class LockerMain {
 			System.out.println("3)EXIT ");
 			System.out.println("----------------");
 			System.out.println("Enter your choice:");
-			ch = Integer.parseInt(scanner.nextLine());
+			
+			try {
+				
+				ch = Integer.parseInt(scanner.nextLine());
+				
+			}catch(BusinessException e) {
+				System.out.println(e.getMessage());
+			}
+			
+			
 			
 			switch (ch) {
 			case 1:
@@ -60,16 +70,32 @@ public class LockerMain {
 						System.out.println("1) Create new file");
 						System.out.println("2) Add file from machine");
 						System.out.println("Enter your choice:");
-						int io = Integer.parseInt(scanner.nextLine());
-						if(io == 1) {
-							System.out.println("Enter name of file to be created ");
-							fname = scanner.nextLine();
-							fileImpl.createFileName(fname);
-						}else if(io == 2) {
-							System.out.println("Enter path of file ");
-							srcPath = scanner.nextLine();
-							fileImpl.createFileSrcPath(srcPath);
+						try {
+							int io = Integer.parseInt(scanner.nextLine());
+							if(io == 1) {
+								System.out.println("Enter name of file to be created ");
+								fname = scanner.nextLine();
+								if(fname!= null) {
+									fileImpl.createFileName(fname);
+								}else {
+									throw new BusinessException("Invalid! Name to be entered");
+								}
+								
+							}else if(io == 2) {
+								System.out.println("Enter path of file ");
+								srcPath = scanner.nextLine();
+								if(srcPath!= null) {
+									fileImpl.createFileSrcPath(srcPath);
+								}else {
+									throw new BusinessException("Invalid! File name should to be entered");
+								}
+								
+							}
+							
+						}catch(BusinessException e) {
+							System.out.println(e.getMessage());
 						}
+						
 						
 												
 						break;
@@ -78,14 +104,24 @@ public class LockerMain {
 						
 						System.out.println("Delete file from directory:");
 						fname = scanner.nextLine();
-						fileImpl.deleteFileName(fname);
+						if(fname!= null) {
+							fileImpl.deleteFileName(fname);
+						}else {
+							throw new BusinessException("Invalid! File name should to be entered");
+						}
+						
 											
 						break;
 						
 					case 3:
 						System.out.println("Search file in directory:");
 						fname = scanner.nextLine();
-						fileImpl.searchFileName(fname);
+						if(fname!= null) {
+							fileImpl.searchFileName(fname);
+						}else {
+							throw new BusinessException("Invalid! File name should to be entered");
+						}
+						
 						
 						break;
 						
