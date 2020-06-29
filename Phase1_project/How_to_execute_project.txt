@@ -1,5 +1,6 @@
 Steps to execute project:
 1) Download IDE preferablely STS4
 2) import project from Application_workspace
-3) run the project
-4) use console for user input
+3) Change the ROOT_PATH in the com.app.pathconfig to a path to directory in your machine
+4) run the project
+5) use console for user input
