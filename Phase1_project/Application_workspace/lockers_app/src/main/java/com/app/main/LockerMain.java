@@ -47,9 +47,9 @@ public class LockerMain {
 			switch (ch) {
 			case 1:
 				ListFiles lf = new ListFiles();
-				System.out.println("\n");
+				System.out.println();
 				lf.printListFiles(PathConfig.ROOT_PATH);
-				System.out.println("\n");
+				System.out.println();
 				break;
 				
 			case 2:

@@ -1,0 +1,178 @@
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+1
+
+abc.txt
+help.txt
+one.txt
+two.txt
+
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+2
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+1
+
+Add file to directory:
+1) Create new file
+2) Add file from machine
+Enter your choice:
+1
+Enter name of file to be created 
+Hey.txt
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+1
+
+Add file to directory:
+1) Create new file
+2) Add file from machine
+Enter your choice:
+2
+Enter path of file 
+C:\Users\davin\OneDrive\Desktop\BNP_Training_Projects\Phase1_project\try\ItsHere.txt
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+4
+Returning to main menu
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+1
+
+abc.txt
+help.txt
+Hey.txt
+ItsHere.txt
+one.txt
+two.txt
+
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+2
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+2
+Delete file from directory:
+help.txt
+help.txt deleted
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+3
+Search file in directory:
+one.txt
+one.txt is found at path C:\Users\davin\OneDrive\Desktop\BNP_Training_Projects\Phase1_project\app_textfiles\one.txt
+
+Please enter one the following options
+----------------
+1)Add file to List 
+2)Delete file from List 
+3)Search file in List 
+4)Return to Main Menu
+----------------
+Enter your choice:
+4
+Returning to main menu
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+1
+
+abc.txt
+Hey.txt
+ItsHere.txt
+one.txt
+two.txt
+
+
+Welcome to Company Lockers Pvt Ltd.
+Developed by Davina Pinto,BNP trainee
+----------------
+Main Menu
+----------------
+1)Display List of Files in Directory 
+2)Options to manipulate files
+3)EXIT 
+----------------
+Enter your choice:
+3
+Tankyou for using our application.
